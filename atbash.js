@@ -1,7 +1,6 @@
 const mod = require('./mod');
-function atbash(
-  word = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi jklmnopqrstuvwxyz{}97',
-) {
+
+function atbash(word) {
   let res = [];
   let newres = [];
   let ress = [];
@@ -21,6 +20,5 @@ function atbash(
     newres.push(String.fromCharCode(ress[i]));
   }
 
-  return newres.join('');
+  return `${newres.join('')}  `;
 }
-console.log(atbash());

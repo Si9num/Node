@@ -1,30 +1,48 @@
-function rot(word = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz') {
+function rot(word, par) {
   let res = [];
   let newres = [];
   let ress = [];
   word = word.split('');
-  for (let i = 0; i < word.length; i += 1) {
-    res.push(word[i].charCodeAt(0));
+  if (par === 1) {
+    for (let i = 0; i < word.length; i += 1) {
+      res.push(word[i].charCodeAt(0));
 
-    if ((res[i] > 64 && res[i] < 91) || (res[i] > 96 && res[i] < 123)) {
-      ress.push(res[i] + 8);
-    } else {
-      ress.push(res[i]);
+      if ((res[i] > 64 && res[i] < 83) || (res[i] > 96 && res[i] < 115)) {
+        ress.push(res[i] + 8);
+      } else if (
+        (res[i] > 82 && res[i] < 91) ||
+        (res[i] > 114 && res[i] < 123)
+      ) {
+        ress.push(res[i] - 18);
+      } else {
+        ress.push(res[i]);
+      }
+    }
+
+    for (let i = 0; i < word.length; i += 1) {
+      newres.push(String.fromCharCode(ress[i]));
     }
   }
+  if (par === 0) {
+    for (let i = 0; i < word.length; i += 1) {
+      res.push(word[i].charCodeAt(0));
 
-  for (let i = 0; i < word.length; i += 1) {
-    newres.push(String.fromCharCode(ress[i]));
-  }
-  for (let i = 0; i < newres.length; i += 1) {
-    if (
-      (newres[i].charCodeAt(0) < 100 && newres[i].charCodeAt(0) > 90) ||
-      (newres[i].charCodeAt(0) < 131 && newres[i].charCodeAt(0) > 122)
-    ) {
-      newres[i] = `${newres[i].charCodeAt(0) - 26}`;
-      newres[i] = `${String.fromCharCode(newres[i])}`;
+      if ((res[i] > 72 && res[i] < 91) || (res[i] > 104 && res[i] < 123)) {
+        ress.push(res[i] - 8);
+      } else if (
+        (res[i] > 64 && res[i] < 73) ||
+        (res[i] > 96 && res[i] < 105)
+      ) {
+        ress.push(res[i] + 18);
+      } else {
+        ress.push(res[i]);
+      }
+    }
+
+    for (let i = 0; i < word.length; i += 1) {
+      newres.push(String.fromCharCode(ress[i]));
     }
   }
-  return newres.join('');
+  return `${newres.join('')}  `;
 }
-console.log(rot());
+console.log(rot('Bpqa qa amkzmb. Umaaiom ijwcb "_" agujwt!', 0));
