@@ -45,4 +45,4 @@ function rot(word, par) {
   }
   return `${newres.join('')}  `;
 }
-console.log(rot('Bpqa qa amkzmb. Umaaiom ijwcb "_" agujwt!', 0));
+module.exports = rot;

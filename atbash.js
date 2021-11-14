@@ -22,3 +22,4 @@ function atbash(word) {
 
   return `${newres.join('')}  `;
 }
+module.exports = atbash;
