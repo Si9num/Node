@@ -34,7 +34,7 @@ class Caesar extends Transform {
         this.par[i][1] !== '0' &&
         this.par[i][0] !== 'A'
       ) {
-        console.log(this.par[i][0]);
+       
         process.stderr.write('Error: config is invalid');
         process.exit(1);
       }
@@ -52,7 +52,6 @@ class Caesar extends Transform {
         d.push(f);
       }
     }
-    console.log(d);
     this.push(d[d.length - 1]);
     callback();
   }
