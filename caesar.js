@@ -39,5 +39,5 @@ function caesar(word, par) {
   }
   return `${newres.join('')}  `;
 }
-console.log(caesar('BCDEFGHIJKLMNOPQRSTUVWXYZA bcdefgkijklmnopqrstuvwxyza', 0));
+
 module.exports = caesar;
