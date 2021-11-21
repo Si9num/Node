@@ -1,5 +1,5 @@
 const fs = require('fs');
-
+const { spawn } = require('child_process');
 const Caesar = require('./trans');
 
 const flagIndexI = process.argv.indexOf('-i');
@@ -38,3 +38,4 @@ function cons() {
   }
 }
 cons();
+module.exports = cons;
