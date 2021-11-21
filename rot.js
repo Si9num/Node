@@ -45,4 +45,5 @@ function rot(word, par) {
   }
   return `${newres.join('')}  `;
 }
+
 module.exports = rot;

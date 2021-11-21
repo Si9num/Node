@@ -38,3 +38,4 @@ function cons() {
   }
 }
 cons();
+module.exports = cons;
